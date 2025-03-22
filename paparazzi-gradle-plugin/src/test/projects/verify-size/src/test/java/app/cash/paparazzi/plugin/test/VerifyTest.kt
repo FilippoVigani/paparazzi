@@ -18,7 +18,7 @@ package app.cash.paparazzi.plugin.test
 import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup.LayoutParams
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import com.android.ide.common.rendering.api.SessionParams.RenderingMode.SHRINK
 import org.junit.Rule
 import org.junit.Test

@@ -1,7 +1,7 @@
 package app.cash.paparazzi.sample
 
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
 import org.junit.Rule

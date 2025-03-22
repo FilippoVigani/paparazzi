@@ -8,7 +8,7 @@ import android.widget.FrameLayout
 import android.widget.FrameLayout.LayoutParams
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import org.junit.Rule
 import org.junit.Test
 

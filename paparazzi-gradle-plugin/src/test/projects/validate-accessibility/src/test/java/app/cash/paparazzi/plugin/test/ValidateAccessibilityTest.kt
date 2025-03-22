@@ -3,7 +3,7 @@ package app.cash.paparazzi.plugin.test
 import android.graphics.Color
 import android.widget.LinearLayout
 import android.widget.TextView
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import org.junit.Rule
 import org.junit.Test
 

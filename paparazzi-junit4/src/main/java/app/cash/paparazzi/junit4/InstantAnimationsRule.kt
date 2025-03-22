@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package app.cash.paparazzi
+package app.cash.paparazzi.junit4
 
 import android.animation.Animator.AnimatorListener
 import android.animation.ValueAnimator

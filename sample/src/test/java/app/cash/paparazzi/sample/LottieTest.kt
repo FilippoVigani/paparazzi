@@ -1,6 +1,6 @@
 package app.cash.paparazzi.sample
 
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieCompositionFactory
 import org.junit.Rule

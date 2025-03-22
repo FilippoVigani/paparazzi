@@ -19,7 +19,7 @@ import android.view.Gravity.CENTER
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.FrameLayout.LayoutParams
 import androidx.appcompat.widget.AppCompatImageView
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import org.junit.Rule
 import org.junit.Test
 

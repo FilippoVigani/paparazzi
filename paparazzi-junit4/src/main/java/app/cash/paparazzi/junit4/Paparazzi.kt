@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package app.cash.paparazzi
+package app.cash.paparazzi.junit4
 
 import android.content.Context
 import android.content.res.Resources
@@ -21,6 +21,17 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.compose.runtime.Composable
+import app.cash.paparazzi.DeviceConfig
+import app.cash.paparazzi.Environment
+import app.cash.paparazzi.HtmlReportWriter
+import app.cash.paparazzi.PaparazziSdk
+import app.cash.paparazzi.RenderExtension
+import app.cash.paparazzi.Snapshot
+import app.cash.paparazzi.SnapshotHandler
+import app.cash.paparazzi.SnapshotVerifier
+import app.cash.paparazzi.TestName
+import app.cash.paparazzi.detectEnvironment
+import app.cash.paparazzi.detectMaxPercentDifferenceDefault
 import com.android.ide.common.rendering.api.SessionParams.RenderingMode
 import org.junit.rules.TestRule
 import org.junit.runner.Description

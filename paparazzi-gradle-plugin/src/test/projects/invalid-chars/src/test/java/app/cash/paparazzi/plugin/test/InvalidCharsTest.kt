@@ -18,7 +18,7 @@ package app.cash.paparazzi.plugin.test
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.Text
 import androidx.compose.ui.graphics.Color
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
 import com.google.testing.junit.testparameterinjector.TestParameterValuesProvider

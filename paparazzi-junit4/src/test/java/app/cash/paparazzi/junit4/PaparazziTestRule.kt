@@ -1,4 +1,4 @@
-package app.cash.paparazzi
+package app.cash.paparazzi.junit4
 
 import org.junit.rules.ExternalResource
 import org.junit.rules.TemporaryFolder

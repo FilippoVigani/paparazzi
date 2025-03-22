@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.viewinterop.AndroidView
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import com.android.ide.common.rendering.api.SessionParams.RenderingMode
 import com.android.ide.common.rendering.api.SessionParams.RenderingMode.NORMAL
 import com.android.ide.common.rendering.api.SessionParams.RenderingMode.SHRINK

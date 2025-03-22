@@ -18,7 +18,7 @@ package app.cash.paparazzi.plugin.test
 import android.widget.LinearLayout
 import app.cash.paparazzi.DeviceConfig.Companion.NEXUS_7
 import app.cash.paparazzi.DeviceConfig.Companion.PIXEL_3
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import org.junit.Rule
 import org.junit.Test
 

@@ -17,7 +17,7 @@ package app.cash.paparazzi.sample
 
 import android.animation.ObjectAnimator
 import android.view.View
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import app.cash.paparazzi.sample.databinding.KeypadBinding
 import org.junit.Rule
 import org.junit.Test

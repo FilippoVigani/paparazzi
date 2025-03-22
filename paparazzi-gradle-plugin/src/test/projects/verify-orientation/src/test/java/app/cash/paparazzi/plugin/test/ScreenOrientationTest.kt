@@ -17,7 +17,7 @@ package app.cash.paparazzi.plugin.test
 
 import android.widget.FrameLayout
 import app.cash.paparazzi.DeviceConfig.Companion.PIXEL_C
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import com.android.resources.ScreenOrientation
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector

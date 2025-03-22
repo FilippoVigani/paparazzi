@@ -1,7 +1,7 @@
 package app.cash.paparazzi.plugin.test
 
 import androidx.compose.runtime.Composable
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.RuleChain

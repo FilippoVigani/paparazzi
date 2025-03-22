@@ -1,7 +1,7 @@
 package app.cash.paparazzi.plugin.test
 
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.Paparazzi
 import com.android.resources.LayoutDirection
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
