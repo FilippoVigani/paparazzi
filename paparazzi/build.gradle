@@ -43,7 +43,6 @@ dependencies {
   api libs.tools.ninepatch
   api libs.tools.sdkCommon
   api libs.kxml2
-  api libs.junit
   api libs.androidx.annotations
   api libs.guava
   api libs.kotlinx.coroutines.android
