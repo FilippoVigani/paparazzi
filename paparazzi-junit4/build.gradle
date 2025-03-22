@@ -1,1 +1,13 @@
 apply plugin: 'org.jetbrains.kotlin.jvm'
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+apply plugin: 'aar2jar'
+
+aar2jar.configureForConfiguration("compileOnly")
+aar2jar.configureForConfiguration("testImplementation")
+
+dependencies {
+  api projects.paparazzi
+
+  testImplementationAarAsJar libs.androidx.compose.ui.android
+  compileOnlyAarAsJar libs.androidx.compose.ui.android
+}
