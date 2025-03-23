@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package app.cash.paparazzi
+package app.cash.paparazzi.junit4
 
 /** Simulate an empty R.java for this package. */
-class R
+public class R
