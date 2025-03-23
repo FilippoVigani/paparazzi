@@ -9,6 +9,7 @@ kotlin = "2.0.21"
 ksp = "2.0.21-1.0.28"
 layoutlib = "15.1.4"
 moshi = "1.15.2"
+junitJupiter = "5.12.1"
 
 minSdk = "25"
 compileSdk = "34"
@@ -68,6 +69,8 @@ trove4j = { module = "org.jetbrains.intellij.deps:trove4j", version = "1.0.20200
 
 # Test libraries
 junit = { module = "junit:junit", version = "4.13.2" }
+junitJupiterBom = { module = "org.junit:junit-bom", version.ref = "junitJupiter" }
+junitJupiterApi = { module = "org.junit.jupiter:junit-jupiter-api" }
 testParameterInjector = { module = "com.google.testparameterinjector:test-parameter-injector", version = "1.18" }
 truth = { module = "com.google.truth:truth", version = "1.4.4" }
 

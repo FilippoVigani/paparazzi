@@ -1,1 +1,7 @@
 apply plugin: 'org.jetbrains.kotlin.jvm'
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+
+dependencies {
+  implementation platform(libs.junitJupiterBom)
+  implementation libs.junitJupiterApi
+}
