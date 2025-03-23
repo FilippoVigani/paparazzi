@@ -8,13 +8,13 @@ import android.widget.LinearLayout
 import android.widget.LinearLayout.VERTICAL
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class NinePatchTest {
   @get:Rule
-  val paparazzi = Paparazzi(theme = "Theme.App")
+  val paparazzi = PaparazziRule(theme = "Theme.App")
 
   @Test
   fun ninePatch() {

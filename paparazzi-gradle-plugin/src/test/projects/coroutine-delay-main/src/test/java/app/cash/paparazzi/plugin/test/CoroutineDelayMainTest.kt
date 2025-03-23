@@ -3,7 +3,7 @@ package app.cash.paparazzi.plugin.test
 import android.os.SystemClock
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.ComposeView
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -15,7 +15,7 @@ import kotlinx.coroutines.test.resetMain
 @OptIn(ExperimentalCoroutinesApi::class)
 class CoroutineDelayMainTest {
   @get:Rule
-  val paparazzi = Paparazzi()
+  val paparazzi = PaparazziRule()
 
   init {
     // coroutines-test installs a TestMainDispatcher which is incompatible with ComposeUi

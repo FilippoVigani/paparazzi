@@ -18,7 +18,7 @@ package app.cash.paparazzi.plugin.test
 import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup.LayoutParams
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.android.ide.common.rendering.api.SessionParams.RenderingMode.SHRINK
 import org.junit.Rule
 import org.junit.Test
@@ -26,7 +26,7 @@ import org.junit.Test
 class VerifyTest {
 
   @get:Rule
-  val paparazzi = Paparazzi(renderingMode = SHRINK)
+  val paparazzi = PaparazziRule(renderingMode = SHRINK)
 
   @Test
   fun verify() {

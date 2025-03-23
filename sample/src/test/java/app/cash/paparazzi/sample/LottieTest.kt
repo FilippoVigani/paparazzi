@@ -1,6 +1,6 @@
 package app.cash.paparazzi.sample
 
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieCompositionFactory
 import org.junit.Rule
@@ -8,7 +8,7 @@ import org.junit.Test
 
 class LottieTest {
   @get:Rule
-  var paparazzi = Paparazzi()
+  var paparazzi = PaparazziRule()
 
   @Test
   fun lottie() {

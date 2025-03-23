@@ -1,7 +1,7 @@
 package app.cash.paparazzi.plugin.test
 
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
 import org.junit.Rule
@@ -18,7 +18,7 @@ class LocaleQualifierTest(
   }
 
   @get:Rule
-  val paparazzi = Paparazzi(
+  val paparazzi = PaparazziRule(
     deviceConfig = DeviceConfig.NEXUS_5.copy(
       locale = locale.tag
     )

@@ -12,13 +12,13 @@ import android.widget.TextView
 import app.cash.paparazzi.DeviceConfig
 import app.cash.paparazzi.SnapshotVerifier
 import app.cash.paparazzi.accessibility.AccessibilityRenderExtension
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class AccessibilityRenderExtensionTest {
   @get:Rule
-  val paparazzi = Paparazzi(
+  val paparazzi = PaparazziRule(
       deviceConfig = DeviceConfig.NEXUS_5,
       snapshotHandler = SnapshotVerifier(maxPercentDifference = 0.1),
       renderExtensions = setOf(AccessibilityRenderExtension())

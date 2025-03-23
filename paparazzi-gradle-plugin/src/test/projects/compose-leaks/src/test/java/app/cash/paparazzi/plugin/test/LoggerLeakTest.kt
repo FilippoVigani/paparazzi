@@ -1,7 +1,7 @@
 package app.cash.paparazzi.plugin.test
 
 import androidx.compose.runtime.Composable
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.RuleChain
@@ -9,7 +9,7 @@ import org.junit.rules.TestRule
 import org.junit.runners.model.Statement
 
 class LoggerLeakTest {
-  private val paparazzi = Paparazzi()
+  private val paparazzi = PaparazziRule()
   private val expectExceptionRule = TestRule { base, _ ->
     object : Statement() {
       override fun evaluate() {

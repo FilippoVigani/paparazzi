@@ -16,13 +16,13 @@
 package app.cash.paparazzi.plugin.test
 
 import android.widget.LinearLayout
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class VerifyTest {
   @get:Rule
-  val paparazzi = Paparazzi()
+  val paparazzi = PaparazziRule()
 
   @Test
   fun verify() {

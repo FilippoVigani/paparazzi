@@ -9,14 +9,14 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewTreeLifecycleOwner
 import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.findViewTreeSavedStateRegistryOwner
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.google.common.truth.Truth.assertThat
 import org.junit.Rule
 import org.junit.Test
 
 class LifecycleUsageTest {
   @get:Rule
-  val paparazzi = Paparazzi()
+  val paparazzi = PaparazziRule()
 
   @Test fun lifecycleOwner() {
     val view = View(paparazzi.context).apply {

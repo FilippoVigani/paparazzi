@@ -18,13 +18,13 @@ package app.cash.paparazzi.plugin.test
 import android.widget.LinearLayout
 import app.cash.paparazzi.DeviceConfig.Companion.NEXUS_7
 import app.cash.paparazzi.DeviceConfig.Companion.PIXEL_3
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class LaunchViewTest {
   @get:Rule
-  val paparazzi = Paparazzi(deviceConfig = PIXEL_3)
+  val paparazzi = PaparazziRule(deviceConfig = PIXEL_3)
 
   @Test
   fun updatingConfigUpdatesResources() {

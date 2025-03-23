@@ -17,7 +17,7 @@ import org.junit.Test
 
 class RenderExtensionTest {
     @get:Rule
-    val paparazzi = Paparazzi(
+    val paparazzi = PaparazziRule(
         deviceConfig = DeviceConfig.NEXUS_5,
         snapshotHandler = SnapshotVerifier(maxPercentDifference = 0.1),
         renderExtensions = setOf(

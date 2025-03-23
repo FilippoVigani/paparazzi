@@ -35,7 +35,7 @@ import org.junit.Rule
 import org.junit.Test
 import java.util.concurrent.TimeUnit
 
-class PaparazziTest {
+class PaparazziRuleTest {
   @get:Rule
   val testRule = PaparazziTestRule()
 

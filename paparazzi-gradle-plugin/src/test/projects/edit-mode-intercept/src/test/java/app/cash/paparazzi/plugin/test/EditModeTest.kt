@@ -17,13 +17,13 @@ package app.cash.paparazzi.plugin.test
 
 import android.content.Context
 import android.widget.LinearLayout
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class EditModeTest {
   @get:Rule
-  val paparazzi = Paparazzi()
+  val paparazzi = PaparazziRule()
 
   @Test
   fun crashIfInEditMode() {

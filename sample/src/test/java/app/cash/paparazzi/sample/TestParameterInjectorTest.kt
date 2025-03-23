@@ -2,7 +2,7 @@ package app.cash.paparazzi.sample
 
 import android.widget.LinearLayout
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import app.cash.paparazzi.sample.databinding.KeypadBinding
 import com.android.resources.ScreenOrientation.LANDSCAPE
 import com.google.testing.junit.testparameterinjector.TestParameter
@@ -34,7 +34,7 @@ class TestParameterInjectorTest(
   }
 
   @get:Rule
-  val paparazzi = Paparazzi(deviceConfig = config.deviceConfig)
+  val paparazzi = PaparazziRule(deviceConfig = config.deviceConfig)
 
   @Test
   fun simple() {

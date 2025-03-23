@@ -38,7 +38,7 @@ import org.junit.runner.Description
 import org.junit.runners.model.Statement
 import java.util.Date
 
-public class Paparazzi @JvmOverloads constructor(
+public class PaparazziRule @JvmOverloads constructor(
   private val environment: Environment = detectEnvironment(),
   private val deviceConfig: DeviceConfig = DeviceConfig.NEXUS_5,
   private val theme: String = "android:Theme.Material.NoActionBar.Fullscreen",

@@ -18,7 +18,7 @@ package app.cash.paparazzi.plugin.test
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.Text
 import androidx.compose.ui.graphics.Color
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
 import com.google.testing.junit.testparameterinjector.TestParameterValuesProvider
@@ -29,7 +29,7 @@ import org.junit.runner.RunWith
 @RunWith(TestParameterInjector::class)
 class InvalidCharsTest {
   @get:Rule
-  val paparazzi = Paparazzi()
+  val paparazzi = PaparazziRule()
 
   @Test
   fun badSnapshotName() {

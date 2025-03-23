@@ -16,14 +16,14 @@
 package app.cash.paparazzi.plugin.test
 
 import android.os.Build
-import app.cash.paparazzi.junit4.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.google.common.truth.Truth.assertThat
 import org.junit.Rule
 import org.junit.Test
 
 class BuildClassTest {
   @get:Rule
-  val paparazzi = Paparazzi()
+  val paparazzi = PaparazziRule()
 
   @Test
   fun verifyFields() {
