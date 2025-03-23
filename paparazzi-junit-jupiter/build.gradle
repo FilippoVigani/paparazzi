@@ -1,7 +1,40 @@
+import com.android.build.gradle.internal.publishing.AndroidArtifacts
+import org.gradle.api.internal.artifacts.transform.UnzipTransform
+
 apply plugin: 'org.jetbrains.kotlin.jvm'
 apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+apply plugin: 'com.vanniktech.maven.publish'
+apply plugin: 'aar2jar'
+
+configurations {
+  layoutlibRuntime {
+    canBeConsumed = false
+    attributes.attribute(AndroidArtifacts.ARTIFACT_TYPE, ArtifactTypeDefinition.DIRECTORY_TYPE)
+  }
+  layoutlibResources {
+    canBeConsumed = false
+    attributes.attribute(AndroidArtifacts.ARTIFACT_TYPE, ArtifactTypeDefinition.DIRECTORY_TYPE)
+  }
+}
+
+aar2jar.configureForConfiguration("compileOnly")
+aar2jar.configureForConfiguration("testImplementation")
 
 dependencies {
+  registerTransform(UnzipTransform) {
+    from.attribute(AndroidArtifacts.ARTIFACT_TYPE, ArtifactTypeDefinition.JAR_TYPE)
+    to.attribute(AndroidArtifacts.ARTIFACT_TYPE, ArtifactTypeDefinition.DIRECTORY_TYPE)
+  }
+}
+
+dependencies {
+  testImplementationAarAsJar libs.androidx.compose.ui.android
+  compileOnlyAarAsJar libs.androidx.compose.ui.android
+
+  api projects.paparazzi
   implementation platform(libs.junitJupiterBom)
   implementation libs.junitJupiterApi
+  api libs.tools.common
+  api libs.tools.layoutlib
+  api libs.tools.layoutlib.api
 }
