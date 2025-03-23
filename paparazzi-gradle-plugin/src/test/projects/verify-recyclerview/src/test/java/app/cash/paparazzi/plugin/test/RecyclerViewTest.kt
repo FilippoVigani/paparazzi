@@ -16,13 +16,13 @@
 package app.cash.paparazzi.plugin.test
 
 import app.cash.paparazzi.DeviceConfig.Companion.PIXEL_3
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class RecyclerViewTest {
   @get:Rule
-  val paparazzi = Paparazzi(deviceConfig = PIXEL_3)
+  val paparazzi = PaparazziRule(deviceConfig = PIXEL_3)
 
   @Test
   fun test() {

@@ -28,14 +28,14 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import app.cash.paparazzi.accessibility.AccessibilityRenderExtension
 import org.junit.Rule
 import org.junit.Test
 
 class ComposeA11yTest {
   @get:Rule
-  val paparazzi = Paparazzi(
+  val paparazzi = PaparazziRule(
     deviceConfig = DeviceConfig.PIXEL,
     renderExtensions = setOf(AccessibilityRenderExtension())
   )

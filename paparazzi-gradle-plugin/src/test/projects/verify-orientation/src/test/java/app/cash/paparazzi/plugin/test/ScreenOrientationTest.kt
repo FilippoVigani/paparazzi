@@ -17,7 +17,7 @@ package app.cash.paparazzi.plugin.test
 
 import android.widget.FrameLayout
 import app.cash.paparazzi.DeviceConfig.Companion.PIXEL_C
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.android.resources.ScreenOrientation
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
@@ -30,7 +30,7 @@ class ScreenOrientationTest(
   @TestParameter val configuration: OrientationTestConfiguration
 ) {
   @get:Rule
-  val paparazzi = Paparazzi(deviceConfig = PIXEL_C.copy(orientation = configuration.orientation))
+  val paparazzi = PaparazziRule(deviceConfig = PIXEL_C.copy(orientation = configuration.orientation))
 
   @Test
   fun test() {

@@ -6,7 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
 import org.junit.Rule
@@ -19,7 +19,7 @@ class TestParameterInjectorTest(
   @TestParameter("1", "2") val fontScale: Float
 ) {
   @get:Rule
-  val paparazzi = Paparazzi(
+  val paparazzi = PaparazziRule(
     maxPercentDifference = 0.0,
     deviceConfig = DeviceConfig.PIXEL.copy(fontScale = fontScale)
   )

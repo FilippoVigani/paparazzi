@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package app.cash.paparazzi
+package app.cash.paparazzi.junit4
 
 import android.animation.AnimationHandler
 import android.animation.Animator
@@ -35,7 +35,7 @@ import org.junit.Rule
 import org.junit.Test
 import java.util.concurrent.TimeUnit
 
-class PaparazziTest {
+class PaparazziRuleTest {
   @get:Rule
   val testRule = PaparazziTestRule()
 

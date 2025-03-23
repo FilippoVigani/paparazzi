@@ -43,7 +43,6 @@ dependencies {
   api libs.tools.ninepatch
   api libs.tools.sdkCommon
   api libs.kxml2
-  api libs.junit
   api libs.androidx.annotations
   api libs.guava
   api libs.kotlinx.coroutines.android
@@ -103,41 +102,7 @@ tasks.named("dokkaHtml").configure {
   }
 }
 
-def generateTestConfig = tasks.register("generateTestConfig") {
-  def resources = layout.buildDirectory.file('intermediates/paparazzi/resources.json')
-  outputs.file(resources)
-
-  doLast {
-    File configFile = resources.get().asFile
-    configFile.write("""{
-      "mainPackage": "app.cash.paparazzi",
-      "mergeResourcesOutputDir": ".",
-      "targetSdkVersion": "34",
-      "mergeAssetsOutputDir": ".",
-      "resourcePackageNames": ["app.cash.paparazzi"],
-      "projectResourceDirs": [],
-      "moduleResourceDirs": [],
-      "aarExplodedDirs": [],
-      "projectAssetDirs": [],
-      "aarAssetDirs": []
-    }""")
-  }
-}
-
 tasks.withType(Test).configureEach {
-  dependsOn(generateTestConfig)
-  systemProperty(
-    "paparazzi.test.resources",
-    generateTestConfig.map { it.outputs.files.singleFile }.get().path
-  )
-  systemProperty(
-    "paparazzi.project.dir",
-    project.layout.projectDirectory.toString()
-  )
-  systemProperty(
-    "paparazzi.build.dir",
-    project.layout.buildDirectory.get().toString()
-  )
   systemProperty(
     "paparazzi.report.dir",
     project.extensions.getByType(ReportingExtension).baseDirectory.dir("paparazzi").get().toString()
@@ -145,17 +110,5 @@ tasks.withType(Test).configureEach {
   systemProperty(
     "paparazzi.snapshot.dir",
     project.layout.projectDirectory.dir("src/test/snapshots").toString()
-  )
-  systemProperty(
-    "paparazzi.artifacts.cache.dir",
-    project.gradle.gradleUserHomeDir.path
-  )
-  systemProperty(
-    "paparazzi.layoutlib.runtime.root",
-    configurations.layoutlibRuntime.singleFile.absolutePath
-  )
-  systemProperty(
-    "paparazzi.layoutlib.resources.root",
-    configurations.layoutlibResources.singleFile.absolutePath
   )
 }

@@ -1,7 +1,7 @@
 package app.cash.paparazzi.sample
 
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
 import org.junit.Rule
@@ -13,7 +13,7 @@ class ResourcesTest(
   @TestParameter locale: Locale
 ) {
   @get:Rule
-  val paparazzi = Paparazzi(
+  val paparazzi = PaparazziRule(
     deviceConfig = DeviceConfig.PIXEL_5.copy(locale = locale.tag)
   )
 

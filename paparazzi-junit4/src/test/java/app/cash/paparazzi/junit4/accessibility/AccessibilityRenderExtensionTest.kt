@@ -1,10 +1,8 @@
-package app.cash.paparazzi.accessibility
+package app.cash.paparazzi.junit4.accessibility
 
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.GradientDrawable.OVAL
-import android.graphics.drawable.GradientDrawable.Orientation.TL_BR
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
@@ -12,17 +10,18 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
 import app.cash.paparazzi.SnapshotVerifier
+import app.cash.paparazzi.accessibility.AccessibilityRenderExtension
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class AccessibilityRenderExtensionTest {
   @get:Rule
-  val paparazzi = Paparazzi(
-    deviceConfig = DeviceConfig.NEXUS_5,
-    snapshotHandler = SnapshotVerifier(maxPercentDifference = 0.1),
-    renderExtensions = setOf(AccessibilityRenderExtension())
+  val paparazzi = PaparazziRule(
+      deviceConfig = DeviceConfig.NEXUS_5,
+      snapshotHandler = SnapshotVerifier(maxPercentDifference = 0.1),
+      renderExtensions = setOf(AccessibilityRenderExtension())
   )
 
   @Test
@@ -40,17 +39,20 @@ class AccessibilityRenderExtensionTest {
   @Test
   fun `verify changing view hierarchy order doesn't change accessibility colors`() {
     val view = buildView(paparazzi.context).apply {
-      addView(View(context).apply { contentDescription = "Empty View" }, 0, LinearLayout.LayoutParams(0, 0))
+      addView(
+          View(context).apply { contentDescription = "Empty View" }, 0,
+          LinearLayout.LayoutParams(0, 0)
+      )
     }
     paparazzi.snapshot(view, name = "accessibility-new-view")
   }
 
   private fun buildView(
-    context: Context,
-    rootLayoutParams: ViewGroup.LayoutParams? = ViewGroup.LayoutParams(
-      ViewGroup.LayoutParams.MATCH_PARENT,
-      ViewGroup.LayoutParams.MATCH_PARENT
-    )
+      context: Context,
+      rootLayoutParams: ViewGroup.LayoutParams? = ViewGroup.LayoutParams(
+          ViewGroup.LayoutParams.MATCH_PARENT,
+          ViewGroup.LayoutParams.MATCH_PARENT
+      )
   ) = LinearLayout(context).apply {
     orientation = LinearLayout.VERTICAL
     rootLayoutParams?.let { layoutParams = it }
@@ -85,8 +87,11 @@ class AccessibilityRenderExtensionTest {
         layoutParams = LinearLayout.LayoutParams(100, 100).apply {
           setMarginsRelative(20, 20, 20, 20)
         }
-        foreground = GradientDrawable(TL_BR, intArrayOf(Color.YELLOW, Color.BLUE)).apply {
-          shape = OVAL
+        foreground = GradientDrawable(
+            GradientDrawable.Orientation.TL_BR,
+            intArrayOf(Color.YELLOW, Color.BLUE)
+        ).apply {
+          shape = GradientDrawable.OVAL
         }
         contentDescription = "Foreground Drawable"
       }
@@ -96,8 +101,8 @@ class AccessibilityRenderExtensionTest {
       Button(context).apply {
         id = 5
         layoutParams = LinearLayout.LayoutParams(
-          ViewGroup.LayoutParams.WRAP_CONTENT,
-          ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
         ).apply {
           gravity = Gravity.CENTER
         }

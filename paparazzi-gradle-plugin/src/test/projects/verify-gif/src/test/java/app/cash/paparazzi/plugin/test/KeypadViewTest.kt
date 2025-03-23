@@ -19,13 +19,13 @@ import android.animation.ObjectAnimator
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class KeypadViewTest {
   @get:Rule
-  val paparazzi = Paparazzi(showSystemUi = true)
+  val paparazzi = PaparazziRule(showSystemUi = true)
 
   @Test
   fun testViews() {

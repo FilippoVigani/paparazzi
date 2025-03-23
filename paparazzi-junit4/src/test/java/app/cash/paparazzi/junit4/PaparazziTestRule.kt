@@ -1,4 +1,4 @@
-package app.cash.paparazzi
+package app.cash.paparazzi.junit4
 
 import org.junit.rules.ExternalResource
 import org.junit.rules.TemporaryFolder
@@ -11,7 +11,7 @@ class PaparazziTestRule : ExternalResource() {
   private val reportDirKey = "paparazzi.snapshot.dir"
   private var oldReportDir: String? = null
 
-  internal lateinit var paparazzi: Paparazzi
+  internal lateinit var paparazzi: PaparazziRule
 
   override fun before() {
     tmpFolder.create()
@@ -19,7 +19,7 @@ class PaparazziTestRule : ExternalResource() {
     oldReportDir = System.getProperty(reportDirKey)
     System.setProperty(reportDirKey, tmpFolder.newFolder().path)
 
-    paparazzi = Paparazzi()
+    paparazzi = PaparazziRule()
   }
 
   override fun after() {

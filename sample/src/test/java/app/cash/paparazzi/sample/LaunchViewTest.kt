@@ -18,14 +18,14 @@ package app.cash.paparazzi.sample
 import android.widget.LinearLayout
 import app.cash.paparazzi.DeviceConfig.Companion.NEXUS_5
 import app.cash.paparazzi.DeviceConfig.Companion.PIXEL_3
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import com.android.resources.ScreenOrientation.LANDSCAPE
 import org.junit.Rule
 import org.junit.Test
 
 class LaunchViewTest {
   @get:Rule
-  val paparazzi = Paparazzi(deviceConfig = PIXEL_3)
+  val paparazzi = PaparazziRule(deviceConfig = PIXEL_3)
 
   @Test
   fun pixel3() {

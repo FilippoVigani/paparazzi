@@ -16,13 +16,13 @@
 package app.cash.paparazzi.plugin.test
 
 import android.widget.LinearLayout
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import org.junit.Rule
 import org.junit.Test
 
 class ButtonViewTest {
   @get:Rule
-  val paparazzi = Paparazzi(theme = "Theme.MaterialComponents")
+  val paparazzi = PaparazziRule(theme = "Theme.MaterialComponents")
 
   @Test
   fun testViews() {

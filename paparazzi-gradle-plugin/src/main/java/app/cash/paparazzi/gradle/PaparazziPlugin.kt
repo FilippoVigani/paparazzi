@@ -337,9 +337,9 @@ public class PaparazziPlugin @Inject constructor(
 
   private fun Project.addTestDependency() {
     val dependency = if (isInternal()) {
-      dependencies.project(mapOf("path" to ":paparazzi"))
+      dependencies.project(mapOf("path" to ":paparazzi-junit4"))
     } else {
-      dependencies.create("app.cash.paparazzi:paparazzi:$VERSION")
+      dependencies.create("app.cash.paparazzi:paparazzi-junit4:$VERSION")
     }
     configurations.getByName("testImplementation").dependencies.add(dependency)
   }

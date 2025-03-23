@@ -42,7 +42,7 @@ import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
+import app.cash.paparazzi.junit4.PaparazziRule
 import app.cash.paparazzi.accessibility.AccessibilityRenderExtension
 import com.android.ide.common.rendering.api.SessionParams.RenderingMode
 import org.junit.Rule
@@ -50,7 +50,7 @@ import org.junit.Test
 
 class ComposeA11yTest {
   @get:Rule
-  val paparazzi = Paparazzi(
+  val paparazzi = PaparazziRule(
     theme = "Theme.AppCompat.Light.NoActionBar",
     deviceConfig = DeviceConfig.PIXEL,
     renderExtensions = setOf(AccessibilityRenderExtension())
