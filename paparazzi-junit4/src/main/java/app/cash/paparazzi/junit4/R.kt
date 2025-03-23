@@ -16,4 +16,4 @@
 package app.cash.paparazzi.junit4
 
 /** Simulate an empty R.java for this package. */
-public class R
+internal class R
